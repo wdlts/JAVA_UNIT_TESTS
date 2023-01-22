@@ -187,10 +187,10 @@ class ShopTest {
      * *Сделать тест параметризованным
      * @apiNote  - проверка корректности ввода id товара
      */
-    @Test
     @DisplayName("Тест на проверку ввода неверного id продукта")
-    void incorrectProductSelectionCausesException() {
-        int id = 133;
+    @ParameterizedTest
+    @ValueSource(ints = {11, 12, 13, 55})
+    void incorrectProductSelectionCausesException(int id) {
         String expectedMessage = "Не найден продукт с id: " + id;
         RuntimeException exception = assertThrows(RuntimeException.class, () -> {
             cart.addProductToCartByID(id);
