@@ -1,4 +1,4 @@
-package UNIT_TEST_DZ;
+package UNIT_TEST_DZ.DZ1;
 
 import org.assertj.core.api.Assert;
 import java.util.Locale;
